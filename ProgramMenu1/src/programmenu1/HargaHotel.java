@@ -223,7 +223,7 @@ public class HargaHotel extends javax.swing.JInternalFrame {
                 int harga_a=harga*hari;
                 outTH.setText(String.valueOf(harga_a));
             }
-        } else if (tipekamar == "Premium"){
+        } else if (tipekamar == "Premium"){ 
             if(hari<=2){
                 harga= 200000;
                 outNP.setText(satu.nama);
