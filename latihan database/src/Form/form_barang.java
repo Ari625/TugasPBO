@@ -165,37 +165,35 @@ public class form_barang extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(44, 44, 44)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(117, 117, 117)
-                        .addComponent(jButton_baru)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton_simpan)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton_edit)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton_hapus))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jTextField_harga, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                                .addComponent(jTextField_satuan, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jTextField_stok, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(jTextField_nama_barang)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel6))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField_nama_barang, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jTextField_stok, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jTextField_satuan, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jTextField_harga, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(21, 21, 21)
-                                .addComponent(jTextField_kode_barang, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(35, 35, 35)))))
+                        .addComponent(jLabel2)
+                        .addGap(21, 21, 21)
+                        .addComponent(jTextField_kode_barang, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(109, 109, 109))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(117, 117, 117)
+                .addComponent(jButton_baru)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton_simpan)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton_edit)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton_hapus)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -251,7 +249,11 @@ public class form_barang extends javax.swing.JFrame {
 
     private void jButton_baruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_baruActionPerformed
         // TODO add your handling code here:
-        
+        jTextField_kode_barang.setText("");
+        jTextField_nama_barang.setText("");
+        jTextField_harga.setText("");
+        jTextField_satuan.setText("");
+        jTextField_stok.setText("");
     }//GEN-LAST:event_jButton_baruActionPerformed
 
     private void jButton_simpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_simpanActionPerformed
