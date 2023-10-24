@@ -72,6 +72,12 @@ public class form_barang extends javax.swing.JFrame {
         jButton_hapus = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable_barang = new javax.swing.JTable();
+        cbb_kategori = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        txt_nilai = new javax.swing.JTextField();
+        btn_cari = new javax.swing.JButton();
+        btn_reset = new javax.swing.JButton();
+        btn_cetak = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -152,60 +158,99 @@ public class form_barang extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable_barang);
 
+        cbb_kategori.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "kode", "nama" }));
+        cbb_kategori.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbb_kategoriActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Kategori : ");
+
+        txt_nilai.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_nilaiActionPerformed(evt);
+            }
+        });
+
+        btn_cari.setText("Cari");
+        btn_cari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cariActionPerformed(evt);
+            }
+        });
+
+        btn_reset.setText("Reset");
+        btn_reset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_resetActionPerformed(evt);
+            }
+        });
+
+        btn_cetak.setText("Cetak");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(35, 117, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(118, 118, 118))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(44, 44, 44)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTextField_harga, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                                .addComponent(jTextField_satuan, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField_stok, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addComponent(jTextField_nama_barang)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(22, 22, 22)
+                                .addComponent(jTextField_kode_barang, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jTextField_harga)
+                                    .addComponent(jTextField_satuan)
+                                    .addComponent(jTextField_stok)
+                                    .addComponent(jTextField_nama_barang))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_cetak))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(21, 21, 21)
-                        .addComponent(jTextField_kode_barang, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(109, 109, 109))
+                        .addComponent(jButton_baru)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton_simpan)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton_edit)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton_hapus)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cbb_kategori, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_nilai, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_cari)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_reset)))
+                .addContainerGap(42, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(117, 117, 117)
-                .addComponent(jButton_baru)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton_simpan)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton_edit)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton_hapus)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(9, 9, 9)
                 .addComponent(jLabel1)
-                .addGap(13, 13, 13)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jTextField_kode_barang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jTextField_nama_barang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -220,13 +265,19 @@ public class form_barang extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField_stok, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField_stok, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_cetak))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton_baru)
                     .addComponent(jButton_simpan)
                     .addComponent(jButton_edit)
-                    .addComponent(jButton_hapus))
+                    .addComponent(jButton_hapus)
+                    .addComponent(cbb_kategori, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7)
+                    .addComponent(txt_nilai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_cari)
+                    .addComponent(btn_reset))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -330,6 +381,53 @@ public class form_barang extends javax.swing.JFrame {
 }
     }//GEN-LAST:event_jButton_hapusActionPerformed
 
+    private void cbb_kategoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbb_kategoriActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbb_kategoriActionPerformed
+
+    private void btn_cariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cariActionPerformed
+        // TODO add your handling code here:
+        DftTblModel_barang = new DefaultTableModel();
+        DftTblModel_barang.addColumn("KODE BARANG");
+        DftTblModel_barang.addColumn("NAMA BARANG");
+        DftTblModel_barang.addColumn("HARGA");
+        DftTblModel_barang.addColumn("SATUAN");
+        DftTblModel_barang.addColumn("STOK");
+        jTable_barang.setModel(DftTblModel_barang);
+        Connection conn = Koneksi.getConnection();
+        try {
+        java.sql.Statement stmt = conn.createStatement();
+        if(cbb_kategori.getSelectedItem().equals("Kode")){
+        SQL = "select * from barang where kode_barang='"+ txt_nilai.getText() +"'";
+        System.out.println(SQL);
+        }else {
+        SQL = "select * from barang where nama_barang like '%"+ txt_nilai.getText() +"%'";
+        System.out.println(SQL);
+        }
+        java.sql.ResultSet res = stmt.executeQuery(SQL);
+        while (res.next()) {
+            DftTblModel_barang.addRow(new Object[]{
+            res.getString("kode_barang"),
+            res.getString("nama_barang"),
+            res.getString("harga"),
+            res.getString("satuan"),
+            res.getString("stok")
+            });
+        }
+        } catch (SQLException e) {
+        System.out.println(e.getMessage());
+        }
+    }//GEN-LAST:event_btn_cariActionPerformed
+
+    private void txt_nilaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nilaiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_nilaiActionPerformed
+
+    private void btn_resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_resetActionPerformed
+        // TODO add your handling code here:
+        this.TampilData();
+    }//GEN-LAST:event_btn_resetActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -366,6 +464,10 @@ public class form_barang extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_cari;
+    private javax.swing.JButton btn_cetak;
+    private javax.swing.JButton btn_reset;
+    private javax.swing.JComboBox<String> cbb_kategori;
     private javax.swing.JButton jButton_baru;
     private javax.swing.JButton jButton_edit;
     private javax.swing.JButton jButton_hapus;
@@ -376,6 +478,7 @@ public class form_barang extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable_barang;
     private javax.swing.JTextField jTextField_harga;
@@ -383,6 +486,7 @@ public class form_barang extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField_nama_barang;
     private javax.swing.JTextField jTextField_satuan;
     private javax.swing.JTextField jTextField_stok;
+    private javax.swing.JTextField txt_nilai;
     // End of variables declaration//GEN-END:variables
 
 }
