@@ -1,12 +1,17 @@
 
 package Form;
 
+import java.io.File;
 import konfigurasi.Koneksi;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.view.JasperViewer;
 
 public class form_barang extends javax.swing.JFrame {
 
@@ -158,7 +163,7 @@ public class form_barang extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable_barang);
 
-        cbb_kategori.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "kode", "nama" }));
+        cbb_kategori.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kode", "Nama" }));
         cbb_kategori.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbb_kategoriActionPerformed(evt);
@@ -188,6 +193,11 @@ public class form_barang extends javax.swing.JFrame {
         });
 
         btn_cetak.setText("Cetak");
+        btn_cetak.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cetakActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -235,7 +245,7 @@ public class form_barang extends javax.swing.JFrame {
                         .addComponent(btn_cari)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btn_reset)))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1)
@@ -398,7 +408,7 @@ public class form_barang extends javax.swing.JFrame {
         try {
         java.sql.Statement stmt = conn.createStatement();
         if(cbb_kategori.getSelectedItem().equals("Kode")){
-        SQL = "select * from barang where kode_barang='"+ txt_nilai.getText() +"'";
+        SQL = "select * from barang where kode_barang like '%"+ txt_nilai.getText() +"%'";
         System.out.println(SQL);
         }else {
         SQL = "select * from barang where nama_barang like '%"+ txt_nilai.getText() +"%'";
@@ -426,7 +436,19 @@ public class form_barang extends javax.swing.JFrame {
     private void btn_resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_resetActionPerformed
         // TODO add your handling code here:
         this.TampilData();
+        txt_nilai.setText("");
     }//GEN-LAST:event_btn_resetActionPerformed
+
+    private void btn_cetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cetakActionPerformed
+        // TODO add your handling code here:
+        try {
+            File namafile = new File("src/Laporan/laporan_barang.jasper");
+            JasperPrint jp = JasperFillManager.fillReport(namafile.getPath(), null, Koneksi.getConnection());
+            JasperViewer.viewReport(jp, false);
+        } catch (JRException e) {
+            JOptionPane.showMessageDialog(rootPane, e);
+        }
+    }//GEN-LAST:event_btn_cetakActionPerformed
 
     /**
      * @param args the command line arguments

@@ -73,7 +73,7 @@
                       <Component id="btn_reset" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="42" max="32767" attributes="0"/>
+              <EmptySpace pref="41" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
@@ -245,8 +245,8 @@
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="2">
-            <StringItem index="0" value="kode"/>
-            <StringItem index="1" value="nama"/>
+            <StringItem index="0" value="Kode"/>
+            <StringItem index="1" value="Nama"/>
           </StringArray>
         </Property>
       </Properties>
@@ -287,6 +287,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Cetak"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_cetakActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
