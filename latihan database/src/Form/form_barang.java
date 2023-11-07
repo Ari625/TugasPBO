@@ -386,7 +386,7 @@ public class form_barang extends javax.swing.JFrame {
             TampilData();
             jTextField_kode_barang.setText("");
             jTextField_nama_barang.setText("");
-            jTextField_harga.setText("");
+            jTextField_harga.setText(""); 
             jTextField_satuan.setText("");
             jTextField_stok.setText("");
             jTextField_kode_barang.requestFocus();
@@ -446,7 +446,7 @@ public class form_barang extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_resetActionPerformed
 
     private void btn_cetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cetakActionPerformed
-        // TODO add your handling code here:
+         // TODO add your handling code here:
         try {
             File namafile = new File("src/Laporan/laporan_barang.jasper");
             JasperPrint jp = JasperFillManager.fillReport(namafile.getPath(), null, Koneksi.getConnection());
