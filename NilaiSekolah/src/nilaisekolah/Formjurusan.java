@@ -238,7 +238,7 @@ public class Formjurusan extends javax.swing.JInternalFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         try {
-            PreparedStatement ps = con.prepareStatement("UPDATE jurusan SET namajurusan=? WHERE idjurusan=?");
+            PreparedStatement ps = con.prepareStatement("UPDATE jurusan SET namajurusan=? WHERE kodejurusan=?");
             ps.setString(1, tfnamajurusan.getText());
             ps.setString(2, tfkodejurusan.getText());
             ps.executeUpdate();
@@ -255,7 +255,7 @@ public class Formjurusan extends javax.swing.JInternalFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
                 try {
-            PreparedStatement ps = con.prepareStatement("DELETE FROM jurusan WHERE idjurusan=?");
+            PreparedStatement ps = con.prepareStatement("DELETE FROM jurusan WHERE kodejurusan=?");
             ps.setString(1, tfkodejurusan.getText());
             ps.executeUpdate();
             
@@ -265,7 +265,8 @@ public class Formjurusan extends javax.swing.JInternalFrame {
         } catch(Exception e) {
             System.out.print("ERROR KUERI KE DATABASE:\n" + e + "\n\n");
         }
-
+  
+                
     }//GEN-LAST:event_jButton3ActionPerformed
 
 
