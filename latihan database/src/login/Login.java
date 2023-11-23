@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Form;
+package login;
+import Form.form_barang;
 import konfigurasi.Koneksi;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,7 +16,7 @@ import javax.swing.JOptionPane;
  * @author Administrator
  */
 public class Login extends javax.swing.JFrame {
-        Connection conn = Koneksi.getConnection();
+        Connection conn = Koneksi.getConnection(); 
     /**
      * Creates new form Login
      */
@@ -182,7 +183,7 @@ public class Login extends javax.swing.JFrame {
         utama.show();
     } else {
 
-   JOptionPane.showMessageDialog(rootPane,"Password Salah");
+    JOptionPane.showMessageDialog(rootPane,"Password Salah");
     txtPassword.setText("");
     txtUsername.requestFocus();
     }
