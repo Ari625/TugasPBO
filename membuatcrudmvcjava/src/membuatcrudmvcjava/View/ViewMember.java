@@ -5,6 +5,12 @@
  */
 package membuatcrudmvcjava.View;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Administrator
@@ -288,4 +294,58 @@ public class ViewMember extends javax.swing.JFrame {
     private javax.swing.JTextField txtNoTelp;
     private javax.swing.JComboBox<String> txtPaketPelanggan;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnBatal() {
+        return btnBatal;
+    }
+
+    public JButton getBtnCari() {
+        return btnCari;
+    }
+
+    public JButton getBtnHapus() {
+        return btnHapus;
+    }
+
+    public JButton getBtnRefresh() {
+        return btnRefresh;
+    }
+
+    public JButton getBtnSimpan() {
+        return btnSimpan;
+    }
+
+    public JButton getBtnUbah() {
+        return btnUbah;
+    }
+
+    public JTable getTblDataMember() {
+        return tblDataMember;
+    }
+
+    public JTextArea getTxtAlamat() {
+        return txtAlamat;
+    }
+
+    public JTextField getTxtCariData() {
+        return txtCariData;
+    }
+
+    public JTextField getTxtID() {
+        return txtID;
+    }
+
+    public JTextField getTxtNamaPelanggan() {
+        return txtNamaPelanggan;
+    }
+
+    public JTextField getTxtNoTelp() {
+        return txtNoTelp;
+    }
+
+    public JComboBox<String> getTxtPaketPelanggan() {
+        return txtPaketPelanggan;
+    }
+
+    
 }
