@@ -5,10 +5,32 @@
  */
 package membuatcrudmvcjava.Koneksi;
 
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
+import java.sql.SQLException;
+
 /**
  *
  * @author Administrator
  */
 public class KoneksiMember {
     
+    static Connection con;
+
+    public static Connection connection(){
+        
+        if(con == null){
+            MysqlDataSource data =new MysqlDataSource();
+            data.setDatabaseName("membuatcrudmvc");
+            data.setUser("root");
+            data.setPassword("");
+            try{
+                con = (Connection) data.getConnection();
+            } catch (SQLException ex){
+                ex.printStackTrace();
+            }
+        }
+        
+        return con;
+    }
 }
