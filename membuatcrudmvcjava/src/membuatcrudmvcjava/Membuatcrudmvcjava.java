@@ -5,6 +5,8 @@
  */
 package membuatcrudmvcjava;
 
+import membuatcrudmvcjava.View.ViewMember;
+
 /**
  *
  * @author Administrator
@@ -16,6 +18,7 @@ public class Membuatcrudmvcjava {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        new ViewMember().setVisible(true);
     }
     
 }
