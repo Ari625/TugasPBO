@@ -10,6 +10,7 @@ import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import membuatcrudmvcjava.Controller.ControllerMember;
 
 /**
  *
@@ -17,11 +18,14 @@ import javax.swing.JTextField;
  */
 public class ViewMember extends javax.swing.JFrame {
 
+    ControllerMember controller_member;
     /**
      * Creates new form ViewMember
      */
     public ViewMember() {
         initComponents();
+        controller_member = new ControllerMember(this);
+        controller_member.isiTable();
     }
 
     /**
@@ -98,16 +102,41 @@ public class ViewMember extends javax.swing.JFrame {
         });
 
         btnUbah.setText("UBAH");
+        btnUbah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUbahActionPerformed(evt);
+            }
+        });
 
         btnHapus.setText("HAPUS");
+        btnHapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHapusActionPerformed(evt);
+            }
+        });
 
         btnBatal.setText("BATAL");
+        btnBatal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBatalActionPerformed(evt);
+            }
+        });
 
         jLabel7.setText("Cari Data : ");
 
         btnCari.setText("Cari");
+        btnCari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCariActionPerformed(evt);
+            }
+        });
 
         btnRefresh.setText("Refresh");
+        btnRefresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRefreshActionPerformed(evt);
+            }
+        });
 
         tblDataMember.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -120,6 +149,11 @@ public class ViewMember extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblDataMember.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblDataMemberMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tblDataMember);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -233,7 +267,44 @@ public class ViewMember extends javax.swing.JFrame {
 
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
         // TODO add your handling code here:
+        controller_member.insert();
+        controller_member.isiTable();
+        controller_member.reset();
     }//GEN-LAST:event_btnSimpanActionPerformed
+
+    private void btnUbahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUbahActionPerformed
+        // TODO add your handling code here:
+        controller_member.update();
+        controller_member.isiTable();
+        controller_member.reset();
+    }//GEN-LAST:event_btnUbahActionPerformed
+
+    private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusActionPerformed
+        // TODO add your handling code here:
+        controller_member.delete();
+        controller_member.isiTable();
+        controller_member.reset();
+    }//GEN-LAST:event_btnHapusActionPerformed
+
+    private void btnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatalActionPerformed
+        // TODO add your handling code here:
+        controller_member.reset();
+    }//GEN-LAST:event_btnBatalActionPerformed
+
+    private void btnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCariActionPerformed
+        // TODO add your handling code here:
+        controller_member.carinama();
+    }//GEN-LAST:event_btnCariActionPerformed
+
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
+        // TODO add your handling code here:
+        controller_member.isiTable();
+    }//GEN-LAST:event_btnRefreshActionPerformed
+
+    private void tblDataMemberMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDataMemberMouseClicked
+        // TODO add your handling code here:
+        controller_member.isiField(tblDataMember.getSelectedRow());
+    }//GEN-LAST:event_tblDataMemberMouseClicked
 
     /**
      * @param args the command line arguments
