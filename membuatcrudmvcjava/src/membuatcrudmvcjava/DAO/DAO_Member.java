@@ -42,10 +42,7 @@ public class DAO_Member implements Implement{
             statement.setString(3, b.getAlamat());
             statement.setString(4, b.getPaket());
             statement.executeUpdate();
-            ResultSet rs = statement.getGeneratedKeys();
-            while(rs.next()){
-                b.setId(rs.getInt(1));
-            }
+           
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally{
@@ -108,9 +105,9 @@ public class DAO_Member implements Implement{
                 ModelMember b = new ModelMember();
                 b.setId(rs.getInt("id"));
                 b.setNama(rs.getString("nama"));
-                b.setNama(rs.getString("no_telp"));
-                b.setNama(rs.getString("alamat"));
-                b.setNama(rs.getString("paket"));
+                b.setNo_telp(rs.getString("no_telp"));
+                b.setAlamat(rs.getString("alamat"));
+                b.setPaket(rs.getString("paket"));
                 lb.add(b);
             }
         } catch (SQLException ex) {
@@ -131,9 +128,9 @@ public class DAO_Member implements Implement{
                 ModelMember b = new ModelMember();
                 b.setId(rs.getInt("id"));
                 b.setNama(rs.getString("nama"));
-                b.setNama(rs.getString("no_telp"));
-                b.setNama(rs.getString("alamat"));
-                b.setNama(rs.getString("paket"));
+                b.setNo_telp(rs.getString("no_telp"));
+                b.setAlamat(rs.getString("alamat"));
+                b.setPaket(rs.getString("paket"));
                 lb.add(b);
             }
         } catch (SQLException ex) {

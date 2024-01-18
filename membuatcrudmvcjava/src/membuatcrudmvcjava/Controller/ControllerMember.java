@@ -37,6 +37,7 @@ public class ControllerMember {
         frame_member.getTxtNoTelp().setText("");
         frame_member.getTxtAlamat().setText("");
         frame_member.getTxtPaketPelanggan().setSelectedItem("--- Pilih Paket ---");
+        frame_member.getTxtCariData().setText("");
         
     }
     

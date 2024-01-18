@@ -124,6 +124,12 @@ public class ViewMember extends javax.swing.JFrame {
 
         jLabel7.setText("Cari Data : ");
 
+        txtCariData.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCariDataActionPerformed(evt);
+            }
+        });
+
         btnCari.setText("Cari");
         btnCari.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -299,12 +305,18 @@ public class ViewMember extends javax.swing.JFrame {
     private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
         // TODO add your handling code here:
         controller_member.isiTable();
+        controller_member.reset();
     }//GEN-LAST:event_btnRefreshActionPerformed
 
     private void tblDataMemberMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDataMemberMouseClicked
         // TODO add your handling code here:
         controller_member.isiField(tblDataMember.getSelectedRow());
     }//GEN-LAST:event_tblDataMemberMouseClicked
+
+    private void txtCariDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCariDataActionPerformed
+        // TODO add your handling code here:
+        controller_member.carinama();
+    }//GEN-LAST:event_txtCariDataActionPerformed
 
     /**
      * @param args the command line arguments
