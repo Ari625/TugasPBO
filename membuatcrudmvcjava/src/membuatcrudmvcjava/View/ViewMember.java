@@ -315,7 +315,6 @@ public class ViewMember extends javax.swing.JFrame {
 
     private void txtCariDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCariDataActionPerformed
         // TODO add your handling code here:
-        controller_member.carinama();
     }//GEN-LAST:event_txtCariDataActionPerformed
 
     /**

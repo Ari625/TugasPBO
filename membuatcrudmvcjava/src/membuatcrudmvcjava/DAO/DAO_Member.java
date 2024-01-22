@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -123,7 +123,7 @@ public class DAO_Member implements Implement{
             lb = new ArrayList<ModelMember>();
             PreparedStatement st = connection.prepareStatement(carinama);
             st.setString(1, "%" + nama + "%");
-            ResultSet rs = st.executeQuery(select);
+            ResultSet rs = st.executeQuery();
             while (rs.next()){
                 ModelMember b = new ModelMember();
                 b.setId(rs.getInt("id"));
